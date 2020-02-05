@@ -1,0 +1,21 @@
+default: &default
+  encoding: utf8
+  username: <%= ENV['database_user'] %>
+  password: <%= ENV['database_password'] %>
+  host: <%= ENV['database_address'] %>
+  port: 3306
+
+development:
+  <<: *default
+  adapter: mysql2
+  database: dev_tpi_ruby
+
+test:
+  <<: *default
+  adapter: mysql2
+  database: dev_tpi_ruby
+
+production:
+  <<: *default
+  adapter: postgresql
+  database: tpi_ruby
