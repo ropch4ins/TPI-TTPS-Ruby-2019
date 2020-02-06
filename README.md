@@ -63,7 +63,7 @@ Trabajo práctico integrador para la asignatura: Taller de Tecnologias de Produc
   9. Correr el servidor web de rails `rails s`
 
 
-### Ejemplos de interacción con la aplicación mediante curl:
+### Interacción con los endpoints de la aplicación mediante curl:
 
 #### POST /sesiones
 Inicia sesión con el usuario admin:admin y genera un token de sesión (JWT) válido por 30 minutos:
@@ -250,4 +250,22 @@ curl --request POST \
 }'
 ```
 
-Para enviar requests a los demás endpoints, se debe seguir el mismo formato que el indicado en los ejemplos (respetando el estándar JSON:API). Adicionalmente, los esqueletos de curl necesarios para hacer requests a todos los endpoints, se encuentra el archivo https://github.com/ropch4ins/TPI-TTPS-Ruby-2019/blob/master/comandos.md
+#### GET /estadisticas/ventas
+Retorna un arreglo con los números de las 10 ventas cuyo monto total sea más alto.
+```
+curl --request GET \
+    --url https://tpi-ttps-ruby-2019-schallibaum.herokuapp.com/estadisticas/ventas \
+    --header 'accept: application/vnd.api+json' \
+    --header 'authorization: Bearer -TOKEN-' \
+    --header 'content-type: application/vnd.api+json'
+```
+
+#### GET /estadisticas/usuarios
+Retorna un arreglo con los 10 usuarios que tienen más ventas realizadas.
+```
+curl --request GET \
+    --url https://tpi-ttps-ruby-2019-schallibaum.herokuapp.com/estadisticas/usuarios \
+    --header 'accept: application/vnd.api+json' \
+    --header 'authorization: Bearer -TOKEN-' \
+    --header 'content-type: application/vnd.api+json'
+```
