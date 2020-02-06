@@ -1,4 +1,4 @@
-class ItemsController < ApplicationController
+class ItemsController < PrivateController
 
     before_action :set_product, only: [:index, :create]
     before_action :check_quantity, only: [:create]
