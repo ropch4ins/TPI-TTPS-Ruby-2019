@@ -55,7 +55,7 @@ Trabajo práctico integrador para la asignatura: Taller de Tecnologias de Produc
   6. Crear la bd: `rake db:create`.
   7. Crear las tablas de la bd: `rake db:migrate`.
   8. Poblar las tablas con datos de prueba: `rake db:seed`. Los datos agregados serán:
-      - 2 usuarios (admin:admin y juan:123456)
+      - 2 usuarios (admin:xlAN34/aBc y juan:An4a2/lls)
       - 20 productos (con código y precio aleatorio)
       - 20 items con estado disponibles a los primeros dos productos creados.
       - 14 condiciones frente al IVA (indicadas por la AFIP)
@@ -78,7 +78,7 @@ curl --request POST \
     "type": "authentication",
     "attributes": {
 	"u": "admin",
-	"p": "admin"
+	"p": "xlAN34/aBc"
     }
   }
 }'
