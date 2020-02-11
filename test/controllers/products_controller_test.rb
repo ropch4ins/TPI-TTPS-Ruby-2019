@@ -15,5 +15,5 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     get product_url(@product.code), headers: @headers, as: :json
     assert_response :success
   end
-
+  
 end

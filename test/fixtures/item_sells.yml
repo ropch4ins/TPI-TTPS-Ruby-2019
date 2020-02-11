@@ -11,3 +11,9 @@ two:
   item: two
   sell: two
   price: 7.5
+
+three:
+  date: 2019-07-05
+  item: three
+  sell: three
+  price: 7.5
