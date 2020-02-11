@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'mysql2', '~> 0.5.2'
+  #gem 'pg', '~> 1.2.2'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 group :production do

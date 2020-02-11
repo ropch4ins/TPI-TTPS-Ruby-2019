@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2019_11_23_194256) do
 
-  create_table "clients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "clients", force: :cascade do |t|
     t.string "cuit_cuil", null: false
     t.string "email", null: false
     t.string "denomination", null: false
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_11_23_194256) do
     t.index ["vat_condition_id"], name: "index_clients_on_vat_condition_id"
   end
 
-  create_table "contact_phones", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "contact_phones", force: :cascade do |t|
     t.string "phone", null: false
     t.bigint "client_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -30,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_11_23_194256) do
     t.index ["client_id"], name: "index_contact_phones_on_client_id"
   end
 
-  create_table "item_reservations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "item_reservations", force: :cascade do |t|
     t.datetime "date", null: false
     t.bigint "item_id", null: false
     t.bigint "reservation_id", null: false
@@ -40,7 +43,7 @@ ActiveRecord::Schema.define(version: 2019_11_23_194256) do
     t.index ["reservation_id"], name: "index_item_reservations_on_reservation_id"
   end
 
-  create_table "item_sells", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "item_sells", force: :cascade do |t|
     t.datetime "date", null: false
     t.bigint "item_id", null: false
     t.bigint "sell_id", null: false
@@ -51,7 +54,7 @@ ActiveRecord::Schema.define(version: 2019_11_23_194256) do
     t.index ["sell_id"], name: "index_item_sells_on_sell_id"
   end
 
-  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "items", force: :cascade do |t|
     t.integer "status", default: 0, null: false
     t.bigint "product_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -59,7 +62,7 @@ ActiveRecord::Schema.define(version: 2019_11_23_194256) do
     t.index ["product_id"], name: "index_items_on_product_id"
   end
 
-  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "products", force: :cascade do |t|
     t.string "code", null: false
     t.string "description"
     t.text "detail"
@@ -68,7 +71,7 @@ ActiveRecord::Schema.define(version: 2019_11_23_194256) do
     t.float "price", null: false
   end
 
-  create_table "reservation_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "reservation_details", force: :cascade do |t|
     t.integer "quantity", null: false
     t.bigint "product_id", null: false
     t.bigint "reservation_id", null: false
@@ -78,7 +81,7 @@ ActiveRecord::Schema.define(version: 2019_11_23_194256) do
     t.index ["reservation_id"], name: "index_reservation_details_on_reservation_id"
   end
 
-  create_table "reservations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "reservations", force: :cascade do |t|
     t.datetime "date", null: false
     t.bigint "client_id", null: false
     t.bigint "user_id", null: false
@@ -88,7 +91,7 @@ ActiveRecord::Schema.define(version: 2019_11_23_194256) do
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
-  create_table "sell_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "sell_details", force: :cascade do |t|
     t.integer "quantity", null: false
     t.bigint "product_id", null: false
     t.bigint "sell_id", null: false
@@ -98,7 +101,7 @@ ActiveRecord::Schema.define(version: 2019_11_23_194256) do
     t.index ["sell_id"], name: "index_sell_details_on_sell_id"
   end
 
-  create_table "sells", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "sells", force: :cascade do |t|
     t.datetime "date", null: false
     t.bigint "client_id", null: false
     t.bigint "user_id", null: false
@@ -110,7 +113,7 @@ ActiveRecord::Schema.define(version: 2019_11_23_194256) do
     t.index ["user_id"], name: "index_sells_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "username", null: false
     t.string "temp_token"
     t.datetime "created_at", precision: 6, null: false
@@ -118,7 +121,7 @@ ActiveRecord::Schema.define(version: 2019_11_23_194256) do
     t.string "password_digest", null: false
   end
 
-  create_table "vat_conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "vat_conditions", force: :cascade do |t|
     t.string "description", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

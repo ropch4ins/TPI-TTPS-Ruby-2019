@@ -4,15 +4,18 @@ default: &default
   password: <%= ENV['database_password'] %>
   host: <%= ENV['database_address'] %>
   port: 3306
+  #port: 5432
 
 development:
   <<: *default
   adapter: mysql2
+  #adapter: postgresql
   database: dev_tpi_ruby
 
 test:
   <<: *default
   adapter: mysql2
+  #adapter: postgresql
   database: dev_tpi_ruby
 
 production:

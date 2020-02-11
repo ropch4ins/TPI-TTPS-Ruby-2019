@@ -1,7 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  status: 0 
+  status: 0
+  product_id: 0
 
 two:
   status: 1
+  product_id: 1

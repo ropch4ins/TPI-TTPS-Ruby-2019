@@ -1,13 +1,46 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+
+
+
 one:
-  username: MyString
-  password_digest: MyString
-  temp_token: MyString
+  id: 1
+  username: "MyStrings"
+  #password: MyString123/
+  password_digest: MyString123/
+  temp_token: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1ODEzNjU1ODksImtleSI6IjVmNGJiZmMwNjhkYjc4NTllZTU0Y2VjMTczZTZiNWYyIn0.g63nK2ybhZBOJ39hjcdTxSXwtS59kJJmVS6acuz3J3w
+  #temp_token: MyString
+  #created_at: <%= 2.days.from_now.to_s :db %>
+  #updated_at: <%= 2.days.from_now.to_s :db %>
   #date: 2019-01-01
 
 two:
   username: MyString
-  password_digest: MyString
-  temp_token: MyString
+  #password: MyString
+  password_digest: MyString123/
+  temp_token: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1ODEzNjU1ODksImtleSI6IjVmNGJiZmMwNjhkYjc4NTllZTU0Y2VjMTczZTZiNWYyIn0.g63nK2ybhZBOJ39hjcdTxSXwtS59kJJmVS6acuz3J3w
+
+
+
+
+#one:
+#  id: 1
+#  username: MyString
+  #password: MyString
+#  password_digest: MyString
+#  temp_token: MyString
+#  created_at: <%= 2.days.from_now.to_s :db %>
+#  updated_at: <%= 2.days.from_now.to_s :db %>
+  #date: 2019-01-01
+
+
+
+
+#two:
+#  username: MyString
+  #password: MyString
+#  password_digest: MyString
+#  temp_token: MyString
+#  created_at: <%= 2.days.from_now.to_s :db %>
+#  updated_at: <%= 2.days.from_now.to_s :db %>
   #date: 2019-01-01

@@ -2,6 +2,12 @@
 
 one:
   description: MyString
+  code: 1
 
 two:
   description: MyString
+  code: 2
+
+first_vat:
+  description: "MyString"
+  code: 3

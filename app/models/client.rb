@@ -3,4 +3,5 @@ class Client < ApplicationRecord
   validates :cuit_cuil, :email, :denomination, presence: true
   validates :cuit_cuil, :email, uniqueness: true
   validates :cuit_cuil, length: {is: 11}
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 end
