@@ -2,13 +2,9 @@
 
 
 one:
-  id: 1
-  username: "Usuario1"
-  password_digest: "$2a$12$qZmRl2sPoIMndKYeR35ey.t096TJmOwLpY0uPfFrdzpq2ri5mDFse"
-  temp_token: "cb9bc075a14a5fc121763a0f9743b922e82ce9b278ca5d39d6b42b0ebbc4a94e"
+  username: "admin"
+  password_digest: "$2a$12$SuRcha7M6u0BC69ljIpwFOwq.W4WWzoqekkMPWYGhxXHhwaH4wxcK"
 
 two:
-  id: 2
-  username: "Usuario2"
-  password_digest: "MyPassword123/"
-  temp_token: "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1ODEzNjU1ODksImtleSI6IjVmNGJiZmMwNjhkYjc4NTllZTU0Y2VjMTczZTZiNWYyIn0.g63nK2ybhZBOJ39hjcdTxSXwtS59kJJmVS6acuz3J3w"
+  username: "juan"
+  password_digest: "$2a$12$wm/D3qEzt4HcWbLZNxVn9OjmwchKniqdeULWRcwca3LmoI05c8TdW"
