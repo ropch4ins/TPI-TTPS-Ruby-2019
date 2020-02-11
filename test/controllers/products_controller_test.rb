@@ -3,36 +3,17 @@ require 'test_helper'
 class ProductsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @product = products(:one)
+    @headers = { 'accept' => 'application/vnd.api+json', 'content-type' => 'application/vnd.api+json', 'authorization' => 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjI1MjgxOTkyOTAsImtleSI6ImQ0ZWIyOWNmYjcxYmU3ZWIxNzE5YTllMDhhZGQ1ODgzIn0.c4M5_aDT9j4CWG-nQXj4WdFgOC0fW_RIIEXs0QtefRo' }
   end
 
   test "should get index" do
-    get products_url, as: :json
+    get products_url, headers: @headers, as: :json
     assert_response :success
-  end
-
-  test "should create product" do
-    assert_difference('Product.count') do
-      post products_url, params: { product: { amount: @product.amount, code: @product.code, description: @product.description, detail: @product.detail } }, as: :json
-    end
-
-    assert_response 201
   end
 
   test "should show product" do
-    get product_url(@product), as: :json
+    get product_url(@product.code), headers: @headers, as: :json
     assert_response :success
   end
 
-  test "should update product" do
-    patch product_url(@product), params: { product: { amount: @product.amount, code: @product.code, description: @product.description, detail: @product.detail } }, as: :json
-    assert_response 200
-  end
-
-  test "should destroy product" do
-    assert_difference('Product.count', -1) do
-      delete product_url(@product), as: :json
-    end
-
-    assert_response 204
-  end
 end

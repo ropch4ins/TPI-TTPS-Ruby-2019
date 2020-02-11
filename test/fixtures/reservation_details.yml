@@ -2,10 +2,15 @@
 
 one:
   quantity: 1
-  product_id: 1
-  reservation_id: 1
+  product: one
+  reservation: one
 
 two:
   quantity: 1
-  product_id: 1
-  reservation_id: 1
+  product: two
+  reservation: two
+
+three:
+  quantity: 1
+  product: six
+  reservation: three

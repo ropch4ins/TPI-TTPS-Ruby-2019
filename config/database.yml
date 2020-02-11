@@ -16,7 +16,7 @@ test:
   <<: *default
   adapter: mysql2
   #adapter: postgresql
-  database: dev_tpi_ruby
+  database: test_tpi_ruby
 
 production:
   <<: *default

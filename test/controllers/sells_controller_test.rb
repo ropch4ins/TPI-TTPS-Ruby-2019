@@ -2,37 +2,12 @@ require 'test_helper'
 
 class SellsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @sell = sells(:one)
+    @headers = { 'accept' => 'application/vnd.api+json', 'content-type' => 'application/vnd.api+json', 'authorization' => 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjI1MjgxOTkyOTAsImtleSI6ImQ0ZWIyOWNmYjcxYmU3ZWIxNzE5YTllMDhhZGQ1ODgzIn0.c4M5_aDT9j4CWG-nQXj4WdFgOC0fW_RIIEXs0QtefRo' }
   end
 
   test "should get index" do
-    get sells_url, as: :json
+    get sells_url, headers: @headers, as: :json
     assert_response :success
   end
 
-  test "should create sell" do
-    assert_difference('Sell.count') do
-      post sells_url, params: { sell: { date: @sell.date } }, as: :json
-    end
-
-    assert_response 201
-  end
-
-  test "should show sell" do
-    get sell_url(@sell), as: :json
-    assert_response :success
-  end
-
-  test "should update sell" do
-    patch sell_url(@sell), params: { sell: { date: @sell.date } }, as: :json
-    assert_response 200
-  end
-
-  test "should destroy sell" do
-    assert_difference('Sell.count', -1) do
-      delete sell_url(@sell), as: :json
-    end
-
-    assert_response 204
-  end
 end

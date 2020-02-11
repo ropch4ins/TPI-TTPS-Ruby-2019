@@ -2,8 +2,33 @@
 
 one:
   status: 0
-  product_id: 0
+  product: one
 
 two:
   status: 1
-  product_id: 1
+  product: two
+
+
+<% 1.upto(5) do |i| %>
+fix_<%= i %>:
+  status: 0
+  product: three
+<% end %>
+
+<% 6.upto(11) do |i| %>
+fix_<%= i %>:
+  status: 0
+  product: four
+<% end %>
+
+<% 12.upto(13) do |i| %>
+fix_<%= i %>:
+  status: 1
+  product: five
+<% end %>
+
+<% 14.upto(24) do |i| %>
+fix_<%= i %>:
+  status: 0
+  product: six
+<% end %>

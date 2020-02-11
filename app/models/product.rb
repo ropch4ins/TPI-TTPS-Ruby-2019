@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   validates :code, :description, :detail, :price, presence:true
   validates :code, uniqueness: {:case_sensitive => false}
   validates :code, format: { with: /\A([A-Z]{3}[0-9]{6})\z/, message: "Debe cumplir el formato: 3 letras seguidas de 6 números" }
+  validates :description, length: { maximum: 200 }
   has_many :items
 
   def self.in_stock

@@ -2,12 +2,12 @@
 
 one:
   date: 2019-07-05
-  item_id: 1
-  sell_id: 1
-  price: 400.5
+  item: one
+  sell: one
+  price: 7.5
 
 two:
   date: 2019-07-05
-  item_id: 1
-  sell_id: 1
-  price: 400.5
+  item: two
+  sell: two
+  price: 7.5

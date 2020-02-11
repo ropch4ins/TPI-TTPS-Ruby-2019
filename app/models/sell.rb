@@ -48,4 +48,9 @@ class Sell < ApplicationRecord
     end
   end
 
+  def total_price
+    item_sells = ItemSell.where(sell_id: self)
+    item_sells.map(&:price).inject(:+)
+  end
+
 end

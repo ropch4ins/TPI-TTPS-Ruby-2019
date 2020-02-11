@@ -2,10 +2,15 @@
 
 one:
   quantity: 1
-  product_id: 1
-  sell_id: 1
+  product: one
+  sell: one
 
 two:
+  quantity: 5
+  product: two
+  sell: two
+
+three:
   quantity: 1
-  product_id: 1
-  sell_id: 1
+  product: six
+  sell: three

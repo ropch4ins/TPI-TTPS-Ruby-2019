@@ -5,10 +5,12 @@ one:
   email: "testandoruby@yahoo.com.ar"
   denomination: "La Anonima"
   #vat_condition_id: 1
-  vat_condition_id: <%= ActiveRecord::FixtureSet.identify(:first_vat) %>
+  #vat_condition_id: <%= ActiveRecord::FixtureSet.identify(:first_vat) %>
+  vat_condition: one
 
 two:
   cuit_cuil: "20387455691"
   email: "jaime_01@gmail.com"
   denomination: "Jaime Camacho"
-  vat_condition_id: 1
+  #vat_condition_id: 1
+  vat_condition: two

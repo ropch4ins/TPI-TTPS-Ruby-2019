@@ -14,16 +14,9 @@ class SerializableSell < JSONAPI::Serializable::Resource
     end
 
     attribute :total_price do
-        item_sells = ItemSell.where(sell_id: @object)
-        item_sells.map(&:price).inject(:+)
-        #item_sells[1][:price]
-        #item_sells.inject { |total, item| total + item[:price] }
-        #item_sells.inject { |total, item| total + item.price }
+        @object.total_price
+        #item_sells = ItemSell.where(sell_id: @object)
+        #item_sells.map(&:price).inject(:+)
     end
 
-    #attribute :total_price do
-    #    @object.sell_details.collect{ |sd| sd.product.price * sd.quantity}.inject :+
-    #end
-
-    # belongs_to :reservation
 end

@@ -2,10 +2,10 @@
 
 one:
   date: 2019-07-05
-  item_id: 1
-  reservation_id: 1
+  item: one
+  reservation: one
 
 two:
   date: 2019-07-05
-  item_id: 1
-  reservation_id: 1
+  item: two
+  reservation: two

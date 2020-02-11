@@ -2,37 +2,18 @@ require 'test_helper'
 
 class ReservationsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @reservation = reservations(:one)
+    @reservation = reservations(:three)
+    @headers = { 'accept' => 'application/vnd.api+json', 'content-type' => 'application/vnd.api+json', 'authorization' => 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjI1MjgxOTkyOTAsImtleSI6ImQ0ZWIyOWNmYjcxYmU3ZWIxNzE5YTllMDhhZGQ1ODgzIn0.c4M5_aDT9j4CWG-nQXj4WdFgOC0fW_RIIEXs0QtefRo' }
   end
 
   test "should get index" do
-    get reservations_url, as: :json
+    get reservations_url, headers: @headers, as: :json
     assert_response :success
-  end
-
-  test "should create reservation" do
-    assert_difference('Reservation.count') do
-      post reservations_url, params: { reservation: { date: @reservation.date } }, as: :json
-    end
-
-    assert_response 201
   end
 
   test "should show reservation" do
-    get reservation_url(@reservation), as: :json
+    get reservation_url(@reservation), headers: @headers, as: :json
     assert_response :success
   end
 
-  test "should update reservation" do
-    patch reservation_url(@reservation), params: { reservation: { date: @reservation.date } }, as: :json
-    assert_response 200
-  end
-
-  test "should destroy reservation" do
-    assert_difference('Reservation.count', -1) do
-      delete reservation_url(@reservation), as: :json
-    end
-
-    assert_response 204
-  end
 end

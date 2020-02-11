@@ -1,29 +1,43 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  code: ONW573708
-  description: MyString
-  detail: MyText
+  code: "ONW573701"
+  description: "Descripcion"
+  detail: "Detalles extensos"
   price: 1.5
 
 two:
-  code: ONW573708
-  description: MyString
-  detail: MyText
+  code: "ONW573702"
+  description: "Descripcion"
+  detail: "Detalles extensos"
   price: 1.5
 
-tres:
-  id: 1
-  code: ONW573708
-  description: Producto 1
-  detail: Detalles más extensos del producto 1
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: &1 2020-02-10 12:48:59.578034000 Z
-    zone: &2 !ruby/object:ActiveSupport::TimeZone
-      name: Etc/UTC
-    time: *1
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: &3 2020-02-10 12:48:59.578034000 Z
-    zone: *2
-    time: *3
-  price: 4427.51
+three:
+  code: "ONW573703"
+  description: "Descripcion"
+  detail: "Detalles extensos"
+  price: 1.5
+
+four:
+  code: "ONW573704"
+  description: "Descripcion"
+  detail: "Detalles extensos"
+  price: 1.5
+
+five:
+  code: "ONW573705"
+  description: "Descripcion"
+  detail: "Detalles extensos"
+  price: 1.5
+
+six:
+  code: "ONW573706"
+  description: "Descripcion"
+  detail: "Detalles extensos"
+  price: 1.5
+
+seven:
+  code: "ONW573707"
+  description: "Descripcion"
+  detail: "Detalles extensos"
+  price: 1.5
