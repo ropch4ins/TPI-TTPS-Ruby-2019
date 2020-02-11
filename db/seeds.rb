@@ -3,11 +3,11 @@ if User.all.empty?
   User.create([
     {
       username: 'admin',
-      password: 'admin'
+      password: 'xlAN34/aBc'
     },
     {
       username: 'juan',
-      password: '123456'
+      password: 'An4a2/lls'
     }
   ])
 end
