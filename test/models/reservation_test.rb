@@ -14,6 +14,18 @@ class ReservationTest < ActiveSupport::TestCase
     assert r.valid?
   end
 
+  test "user is valid" do
+    r = Reservation.new
+    r.valid?
+    assert_includes r.errors.details[:user], error: :blank
+    r.user = User.new
+    r.valid?
+    assert_includes r.errors.details[:user], { error: :invalid, value: r.user }
+    r.user = users(:one)
+    r.valid?
+    assert_empty r.errors.details[:user]
+  end
+
   test "sell and sold? are correct" do
     r = Reservation.new
     r.user = users(:one)

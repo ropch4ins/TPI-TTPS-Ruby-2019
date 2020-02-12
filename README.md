@@ -15,6 +15,7 @@ Trabajo práctico integrador para la asignatura: Taller de Tecnologias de Produc
   
 ### Correcciones de la segunda entrega:
   - Controlador de estadísticas añadido, para obtener usuarios con mayor cantidad de ventas y ventas de mayor monto total.
+  - Tests de controllers arreglados, añadido test de controller de estadísticas y tests del modelo
   - Las columnas de la base en relaciones opcionales pueden ser nulas.
   - Se almacena el precio de venta en el modelo ItemSell.
   - Se utilizan transacciones de la base para operaciones donde se involucran distintas tablas

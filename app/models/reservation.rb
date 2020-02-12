@@ -4,6 +4,7 @@ class Reservation < ApplicationRecord
   has_one :sell
   has_many :reservation_details
   validates :date, :user, :client, presence: true
+  validates_associated :user
 
   def self.create(hash)
     Reservation.transaction do

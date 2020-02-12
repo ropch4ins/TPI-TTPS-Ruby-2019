@@ -21,4 +21,16 @@ class ClientTest < ActiveSupport::TestCase
     assert_empty c.errors.details[:email]
   end
 
+  test "vat condition is valid" do
+    c = Client.new
+    c.valid?
+    assert_includes c.errors.details[:vat_condition], error: :blank
+    c.vat_condition = VatCondition.new
+    c.valid?
+    assert_includes c.errors.details[:vat_condition], { error: :invalid, value: c.vat_condition }
+    c.vat_condition = vat_conditions(:one)
+    c.valid?
+    assert_empty c.errors.details[:vat_condition]
+  end
+
 end

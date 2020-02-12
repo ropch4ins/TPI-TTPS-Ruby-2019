@@ -39,4 +39,9 @@ class SellsControllerTest < ActionDispatch::IntegrationTest
     assert_response 201
   end
 
+  test "should show sell" do
+    get sell_url(@sell), headers: @headers, as: :json
+    assert_response :success
+  end
+
 end

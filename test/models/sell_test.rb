@@ -14,6 +14,27 @@ class SellTest < ActiveSupport::TestCase
     assert s.valid?
   end
 
+  test "user is valid" do
+    s = Sell.new
+    s.valid?
+    assert_includes s.errors.details[:user], error: :blank
+    s.user = User.new
+    s.valid?
+    assert_includes s.errors.details[:user], { error: :invalid, value: s.user }
+    s.user = users(:one)
+    s.valid?
+    assert_empty s.errors.details[:user]
+  end
+
+  test "reservation is valid" do
+    s = Sell.new
+    s.reservation = Reservation.new
+    s.valid?
+    assert_includes s.errors.details[:reservation], { error: :invalid, value: s.reservation }
+    s.reservation = reservations(:one)
+    s.valid?
+    assert_empty s.errors.details[:reservation]
+  end
 
   test "total_price is correct" do
   	s = sells(:two)

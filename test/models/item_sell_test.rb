@@ -15,4 +15,28 @@ class ItemSellTest < ActiveSupport::TestCase
     assert is.valid?
   end
 
+  test "item is valid" do
+    is = ItemSell.new
+    is.valid?
+    assert_includes is.errors.details[:item], error: :blank
+    is.item = Item.new
+    is.valid?
+    assert_includes is.errors.details[:item], { error: :invalid, value: is.item }
+    is.item = items(:one)
+    is.valid?
+    assert_empty is.errors.details[:item]
+  end
+
+  test "sell is valid" do
+    is = ItemSell.new
+    is.valid?
+    assert_includes is.errors.details[:sell], error: :blank
+    is.sell = Sell.new
+    is.valid?
+    assert_includes is.errors.details[:sell], { error: :invalid, value: is.sell }
+    is.sell = sells(:one)
+    is.valid?
+    assert_empty is.errors.details[:sell]
+  end
+
 end

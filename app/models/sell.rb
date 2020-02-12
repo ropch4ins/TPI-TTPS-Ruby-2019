@@ -4,6 +4,7 @@ class Sell < ApplicationRecord
   belongs_to :reservation, foreign_key: "reservation_id", optional: true
   has_many :sell_details
   validates :date, :user, :client, presence: true
+  validates_associated :user, :reservation
 
 
   def self.create(hash)
